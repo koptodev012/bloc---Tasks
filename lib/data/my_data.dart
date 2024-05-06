@@ -1,0 +1,1 @@
+   var counterValue = "0";
