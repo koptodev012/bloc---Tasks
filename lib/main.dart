@@ -1,5 +1,6 @@
 import 'package:bloc_tasks/bloc/counter/counter_bloc.dart';
-import 'package:bloc_tasks/views/counterExample_screen.dart';
+import 'package:bloc_tasks/bloc/switch/switch_bloc.dart';
+import 'package:bloc_tasks/views/switchExample_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,12 +13,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterBloc(),
-      child: MaterialApp(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CounterBloc(), // Bloc 1
+        ),
+        BlocProvider(
+          create: (context) => SwitchBloc(), // Bloc 2
+        ),
+      ],
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Bloc - Tasks',
-        home: CounterExampleScreen(),
+        home: SwitchExampleScreen(),
       ),
     );
   }
