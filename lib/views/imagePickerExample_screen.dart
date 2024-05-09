@@ -3,7 +3,7 @@ import 'package:bloc_tasks/blocs/imagePicker/image_picker_bloc.dart';
 import 'package:bloc_tasks/blocs/imagePicker/image_picker_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
+
 
 class ImagePickerExampleScreen extends StatefulWidget {
   const ImagePickerExampleScreen({super.key});
