@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_tasks/utils/imagePicker_utils.dart';
 import 'package:equatable/equatable.dart';
-import 'package:bloc_tasks/bloc/imagePicker/image_picker_state.dart';
+import 'package:bloc_tasks/blocs/imagePicker/image_picker_state.dart';
 import 'package:image_picker/image_picker.dart';
 part 'image_picker_event.dart';
 
