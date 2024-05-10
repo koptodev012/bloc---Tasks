@@ -1,4 +1,5 @@
 import 'package:bloc_tasks/cubit/phone_Auth/auth_cubit_cubit.dart';
+import 'package:bloc_tasks/routes.dart';
 import 'package:bloc_tasks/views/phone_auth(cubit)/verifyPhone_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,10 +50,7 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
             ),
             BlocConsumer<AuthCubitCubit, AuthCubitState>(
               listener: (context, state) {
-                if (state is AuthCubitCodeSentState) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => VerifyPhone()));
-                }
+                Navigator.pushNamed(context, verifyphone_s);
               },
               builder: (context, state) {
                 if (state is AuthCubitLoadingState) {

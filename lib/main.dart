@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:bloc_tasks/cubit/phone_Auth/auth_cubit_cubit.dart';
+import 'package:bloc_tasks/routes.dart';
 import 'package:bloc_tasks/views/phone_auth(cubit)/homeScreen.dart';
 import 'package:bloc_tasks/views/phone_auth(cubit)/phoneAuth_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart'; // new
@@ -57,10 +58,11 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        onGenerateRoute: Routes.myRoutes, // Routes
         debugShowCheckedModeBanner: false,
         title: 'Bloc - Tasks',
         home: BlocBuilder<AuthCubitCubit, AuthCubitState>(
-          buildWhen: (previous, current){
+          buildWhen: (previous, current) {
             return previous is AuthCubitInitialState;
           },
           builder: (context, state) {
